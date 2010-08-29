@@ -1,0 +1,8 @@
+#Struts 2 sitemesh tutorial
+
+= Struts 2 sitemesh tutorial=
+
+Sitemesh is a web layout framework for java. It is somewhat similar to tiles. Sitemesh uses decorator pattern to decorate the output page. In a typical webapp you will create a number of JSP pages and then ask sitemesh to attache a header, naviagation area, footer and title etc to all the JSP pages.
+
+
+
