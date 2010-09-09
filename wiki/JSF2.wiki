@@ -64,3 +64,77 @@ This hello World application will pop up a login form asking for username and pa
 	</servlet-mapping>
 </web-app>
 }}}
+
+following setting in above web.xml file can be put to show helpful error and debug messages during development phase
+{{{
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+}}}
+The choices for the project stage are Development, UnitTest, SystemTest, and Production.
+
+Apart from web.xml you need to have a *faces-config.xml* file which should look like the one below.
+{{{
+<?xml version="1.0"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+      http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+	<!-- Empty for now. Your entries will go here. But even if you have no entries 
+		in faces-config.xml, you are required to have a valid faces-config.xml file 
+		with legal start and end tags. -->
+</faces-config>
+}}}
+
+
+*index.xhtml* (page with login form) should look like this
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Login page</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h3>Please enter username and password</h3>
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><h:inputText value="#{user.name}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><h:inputSecret value="#{user.password}"></h:inputSecret></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td ><h:commandButton  value="Login" action="welcome"></h:commandButton></td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>
+}}}
+
+*welcome.xhtml*
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Welcome :)</title>
+</h:head>
+<h:body>
+<h3>Welcome to the world of java server faces #{user.name}!</h3>
+<br/>
+the password you entered was <strong>#{user.password}</strong>.
+</h:body>
+</html>
+}}}
