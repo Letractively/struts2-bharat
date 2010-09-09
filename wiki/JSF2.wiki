@@ -1,9 +1,21 @@
 #labels Featured
-#JFS 2.x Tutorial.
+=JFS 2.x Tutorial=
 
 = Introduction =
 
-Comming very soon... stay tuned :)
+This is a JSF 2.x tutorial about setting up JSF to run on Tomcat 7.0 Servlet container
+and eclipse.
+You will require following to follow this tutorial.
+
+
+  # JSF 2.x implementation from https://javaserverfaces.dev.java.net/
+  # Tomcat 7.0/6.0 from http://tomcat.apache.org/
+  # Eclipse from http://eclipse.org (preferably Helios)
 
 
 = Details =
+
+This hello World application will pop up a login form asking for username and password, on pressing the submit button user will be greeted with the welcome message.
+
+
+
