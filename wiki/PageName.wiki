@@ -1,13 +1,17 @@
-#Java Messaging Service tutorial.
-
 = JMS =
 
+== 5.0 Publish and subscribe messaging ==
+
+This is popularly called as pub/sub messaging.
 Add your content here.
 
+=== Key Points ===
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+ # Messages are published to a topic as opposed to a queue in Point-to-Point messaging.
+ # Message consumers can be 1) Durable 2) Non-Durable 3) Dynamic types.
+ # Publisher does not generally know anything about subscribers.
+ # Each message is delivered to multiple subscribers.
+ # This is a push based model. ie Messages are pushed to subscribers (P-2-P is pull based).
+ # Messages delivered to a topic are automatically pushed to all qualified subscribers.
+ # As in enterprise messaging in general, there is no coupling of the producers to the consumers. Subscribers and publishers can be added dynamically at runtime, which allows the system to grow or shrink in complexity over time.
+ # Every client that subscribes to a topic receives its own copy of messages published to that topic. A single message produced by one publisher may be copied and distributed to hundreds or even thousands of subscribers.
