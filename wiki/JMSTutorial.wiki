@@ -23,6 +23,18 @@ only when that subscriber is currently active and connected to the topic, wherea
 durable subscribers receive all desired messages sent to that topic, regardless of whether
 that subscriber is active.
 
+Subscribers may also be dynamic or administered. As you will see later in this tutorial,
+dynamic durable subscribers can be created on the fly, whereas administered subscribers
+are static and known by the JMS provider.
 
+*Interfaces for topics*
+|| *General API* ||        *Publish-and-subscribe API* ||
+||ConnectionFactory || TopicConnectionFactory ||
+||Destination     ||   Topic ||
+||Connection      ||   TopicConnection ||
+||Session         ||   TopicSession ||
+||MessageConsumer ||   TopicPublisher || 
+||MessageProducer ||   TopicSubscriber ||
 
+== When to use Pub/Sub Messaging ==
 
