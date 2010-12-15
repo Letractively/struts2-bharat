@@ -37,4 +37,20 @@ are static and known by the JMS provider.
 ||MessageProducer ||   TopicSubscriber ||
 
 == When to use Pub/Sub Messaging ==
+The publish-and-subscribe model is used when you want to broadcast a message or event to multiple message consumers. The important point here is that multiple consumers may consume the message. By design, the pub/sub model will push copies of the message out to multiple subscribers.
+ This model is generally used in scenarios like:
+  * stock price updates
+  * Exception or error notification
+  * Change notification for a particular item in the database
+
+Any situation where you need to notify multiple consumers of an event is a good use of the pub/sub model.
+
+An important point to notice here is that the publisher does not care about how the information will be used. It simply publishes to the topic.
+
+== Example Application ==
+We will be discussing a small application where a message will be published to a topic whenever an exception is thrown. On the other hand there can be multiple subscribers interested in the message and taking an action depending the criticality of the exception.
+
+
+
+
 
