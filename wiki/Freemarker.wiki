@@ -1,8 +1,86 @@
-#Freemarker Quick Reference
+# Freemarker Quick Reference
 = Introduction =
 
-Freemarker quick reference tutorial
+Freemarker quick reference
 
 == Data-Model at a glance ==
 
- 
+Freemarker Data-model is basically a tree. 
+{{{
+(root)
+  |
+  +- animals
+  |   |
+  |   +- mouse
+  |   |   |   
+  |   |   +- size = "small"
+  |   |   |   
+  |   |   +- price = 50
+  |   |
+  |   +- elephant
+  |   |   |   
+  |   |   +- size = "large"
+  |   |   |   
+  |   |   +- price = 5000
+  |   |
+  |   +- python
+  |       |   
+  |       +- size = "medium"
+  |       |   
+  |       +- price = 4999
+  |
+  +- test = "It is a test"
+  |
+  +- whatnot
+      |
+      +- because = "don't know" 
+
+}}}
+The variables can be treated as directories. The root, animals, elephant, python, whatnot etc.. are called *hashes*. hashes store other variables by a lookup name eg. "animals","mouse" or "price".
+
+The variables that store a single value (size, price, test and because) are called *scalars*.
+
+When you want to use a subvariable in a template, you specify its path from the root, and separate the steps with dots. To access the price of a mouse you write animals.mouse.price.
+
+When you put the special ${...} codes around an expression like this, you are telling FreeMarker to output the corresponding text at that point.
+
+There is one more important kind of variable: *sequences*. They are similar to hashes, but they don't store names for the variables they contain. Instead, they store the subvariables sequentially, and you can access them with a numerical index. For example, in this data-model, animals and whatnot.fruits are sequences:
+
+{{{
+(root)
+  |
+  +- animals
+  |   |
+  |   +- (1st)
+  |   |   |
+  |   |   +- name = "mouse"
+  |   |   |
+  |   |   +- size = "small"
+  |   |   |
+  |   |   +- price = 50
+  |   |
+  |   +- (2nd)
+  |   |   |
+  |   |   +- name = "elephant"
+  |   |   |
+  |   |   +- size = "large"
+  |   |   |
+  |   |   +- price = 5000
+  |   |
+  |   +- (3rd)
+  |       |
+  |       +- name = "python"
+  |       |
+  |       +- size = "medium"
+  |       |
+  |       +- price = 4999
+  |
+  +- whatnot
+      |
+      +- fruits
+          |
+          +- (1st) = "orange"
+          |
+          +- (2nd) = "banana"  
+ }}}
+
