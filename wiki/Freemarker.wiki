@@ -84,3 +84,19 @@ There is one more important kind of variable: *sequences*. They are similar to h
           +- (2nd) = "banana"  
  }}}
 
+
+Scalars can further divided into these categories:
+
+
+  * String: Text, that is, an arbitrary sequence of characters such as ''m'', ''o'', ''u'', ''s'', ''e'' above. For example the name-s and size-s are strings above.
+
+  * Number: It's a numerical value, like the price-s above. The string "50" and the number 50 are two totally different things in FreeMarker. The former is just a sequence of two characters (which happens to be readable as a number for humans), while the latter is a numerical value that you can use, say, in arithmetical calculations.
+
+  * Date/time: A date or time. Like the date an animal were captured, or the time the shop opens.
+
+  * Boolean: A true/false (yes/no, on/off, etc.) thing. Like animals could have a protected subvariable, which store if the animal is protected or not.
+
+=== Template Syntax ===
+  * ${...}: FreeMarker will replace it in the output with the actual value of the thing inside the curly brackets. They are called interpolations.
+  * FTL tags (for FreeMarker Template Language tags): FTL tags are a bit similar to HTML tags, but they are instructions to FreeMarker and will not be printed to the output. The name of these tags start with #. (User defined tags start with @)
+  * Comments: Comments are similar to HTML comments, but they are delimited by <#-- and -->. Anything between these delimiters and the delimiter itself will be ignored by FreeMarker, and will not be written to the output.
