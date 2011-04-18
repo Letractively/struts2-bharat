@@ -1,0 +1,49 @@
+body {
+	color: red;
+}
+
+TABLE {
+border-collapse: collapse;	
+}
+
+#page-container {
+	width: 100%;
+	height: auto;
+	padding: 0px;
+}
+
+#page-header {
+	
+}
+
+#nav-container {
+	height: 30px;
+}
+
+#left-container {
+	width: 15%;
+}
+
+#right-container {
+	width: 15%;
+}
+
+#page-footer {
+	height: 50px;
+}
+
+/********************/
+
+.header-left {
+	background-image: url("../images/template/1.jpg");
+	width: 97px;
+	height: 73px;
+	background-repeat: no-repeat;
+}
+
+.header-right {
+	background-image: url("../images/template/2.jpg");
+	background-repeat: no-repeat; width : 560px;
+	height: 73px;
+	width: 560px;
+}

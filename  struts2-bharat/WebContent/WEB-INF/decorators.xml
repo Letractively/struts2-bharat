@@ -1,0 +1,14 @@
+<decorators defaultdir="/WEB-INF/layouts">
+    <excludes>
+        <pattern>WEB-INF/nodecorate/*</pattern>
+        <pattern>/styles/*</pattern>
+        <pattern>/scripts/*</pattern>
+        <pattern>/images/*</pattern>
+        <pattern>/index.html</pattern>
+    </excludes>
+
+    <decorator name="layout" page="layout.jsp">
+    	<pattern>*</pattern>
+        <pattern>WEB-INF/jsp/*</pattern>
+    </decorator>
+</decorators>
