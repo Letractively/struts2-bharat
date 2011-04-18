@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="/college" namespace="/college" extends="hibernate-default">
+
+        <!-- the method name will be the string before client, eg. editclient then method name will be "edit" -->
+		<action name="register" class="com.ci.web.CollegeAction" method="register">
+			<result>/WEB-INF/jsp/college/register.jsp</result>
+		</action>
+		<action name="save" class="com.ci.web.CollegeAction" method="save">
+			<result>/WEB-INF/jsp/home.jsp</result>
+		</action>
+		
+	</package>
+</struts>
